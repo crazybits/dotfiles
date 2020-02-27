@@ -6,5 +6,6 @@ set showcmd
 set wildmenu
 set ignorecase
 set smartcase
+set wrap
 map S :w<CR>
 map Q :q<CR>
