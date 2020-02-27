@@ -10,3 +10,26 @@ set smartcase
 set wrap
 map S :w<CR>
 map Q :q<CR>
+
+set nocompatible
+filetype on
+filetype indent on
+filetype plugin on
+filetype plugin indent on
+set mouse=a
+set encoding=utf-8
+
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'vim-airline/vim-airline'
+Plug 'connorholyday/vim-snazzy'
+
+" File navigation
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
+call plug#end()
+autocmd VimEnter * NERDTree
+let g:SnazzyTransparent = 1
+color snazzy
