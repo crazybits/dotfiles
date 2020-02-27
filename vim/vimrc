@@ -1,0 +1,8 @@
+syntax on
+set number
+set cursorline
+set hlsearch
+set showcmd
+set wildmenu
+set ignorecase
+set smartcase
