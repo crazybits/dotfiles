@@ -30,6 +30,8 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
 call plug#end()
-autocmd VimEnter * NERDTree
 let g:SnazzyTransparent = 1
 color snazzy
+map t :NERDTreeToggle<CR>
+map tt :NERDTreeClose<CR>
+
