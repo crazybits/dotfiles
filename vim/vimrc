@@ -16,9 +16,17 @@ filetype on
 filetype indent on
 filetype plugin on
 filetype plugin indent on
+"keep 5 line of on buttom and head
+set scrolloff=5
+"change cursor style of insert mode
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
 set mouse=a
 set encoding=utf-8
-
+"cursor on last exit
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 call plug#begin('~/.vim/plugged')
 
