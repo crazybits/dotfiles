@@ -1,4 +1,5 @@
 syntax on
+set number
 set relativenumber
 set cursorline
 set hlsearch
@@ -7,7 +8,14 @@ set showcmd
 set wildmenu
 set ignorecase
 set smartcase
-set wrap
+set nowrap
+set showmatch
+set ruler
+" tab space config
+set tabstop=4
+set shiftwidth=4
+set autoindent
+" save and quite key map
 map S :w<CR>
 map Q :q<CR>
 
@@ -27,7 +35,8 @@ set mouse=a
 set encoding=utf-8
 "cursor on last exit
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-
+"vim config change take effect immediately
+autocmd BufWritePost $MYVIMRC source $MYVIMRC
 call plug#begin('~/.vim/plugged')
 
 Plug 'vim-airline/vim-airline'
@@ -35,11 +44,14 @@ Plug 'connorholyday/vim-snazzy'
 
 " File navigation
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'Xuyuanp/nerdtree-git-plugin'
 
+" Auto pairs
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
+
+
 let g:SnazzyTransparent = 1
 color snazzy
-map t :NERDTreeToggle<CR>
-map tt :NERDTreeClose<CR>
 
+map <F3> :NERDTreeMirror<CR>
+map <F3> :NERDTreeToggle<CR>
